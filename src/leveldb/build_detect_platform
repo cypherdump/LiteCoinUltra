@@ -79,6 +79,9 @@ case "$TARGET_OS" in
         [ -z "$INSTALL_PATH" ] && INSTALL_PATH=`pwd`
         PLATFORM_SHARED_LDFLAGS="-dynamiclib -install_name $INSTALL_PATH/"
         PORT_FILE=port/port_posix.cc
+        PLATFORM_CCFLAGS="-arch x86_64"
+        PLATFORM_CXXFLAGS="-arch x86_64 -stdlib=libc++"
+        PLATFORM_LDFLAGS="-arch x86_64 -stdlib=libc++"
         ;;
     Linux)
         PLATFORM=OS_LINUX
